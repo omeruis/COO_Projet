@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{845736E2-EC32-41DA-9CED-DC3C857D516B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aosk</RootNamespace>
+    <AssemblyName>Aosk</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr4.Runtime.Standard">
+      <HintPath>..\Lib\Antlr4.Runtime.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CellSpace\Cell.cs" />
+    <Compile Include="CellSpace\CellCoord.cs" />
+    <Compile Include="CellSpace\Container.cs" />
+    <Compile Include="CellSpace\Expression.cs" />
+    <Compile Include="Exceptions\AddErrorException.cs" />
+    <Compile Include="Exceptions\AoskException.cs" />
+    <Compile Include="Exceptions\CellNotFoundException.cs" />
+    <Compile Include="Exceptions\CircularExpressionException.cs" />
+    <Compile Include="Exceptions\FunctionNameException.cs" />
+    <Compile Include="Exceptions\GrammarException.cs" />
+    <Compile Include="Exceptions\InvalidPathException.cs" />
+    <Compile Include="Exceptions\NotReferencedException.cs" />
+    <Compile Include="Exceptions\NumberArgumentException.cs" />
+    <Compile Include="Exceptions\TypeException.cs" />
+    <Compile Include="FileManager.cs" />
+    <Compile Include="Kernel.cs" />
+    <Compile Include="ParserSpace\AnalyseVisitor.cs" />
+    <Compile Include="ParserSpace\TableurBaseVisitor.cs" />
+    <Compile Include="ParserSpace\TableurVisitor.cs" />
+    <Compile Include="TermSpace\Fonctions\Numerique\Absolu.cs" />
+    <Compile Include="TermSpace\Fonctions\Numerique\Arrondi.cs" />
+    <Compile Include="TermSpace\Fonctions\Numerique\Trigonometrie\Acos.cs" />
+    <Compile Include="TermSpace\Fonctions\Numerique\Trigonometrie\Asin.cs" />
+    <Compile Include="TermSpace\Fonctions\Numerique\Trigonometrie\Atan.cs" />
+    <Compile Include="TermSpace\Fonctions\Numerique\Trigonometrie\Cosinus.cs" />
+    <Compile Include="TermSpace\Fonctions\Numerique\Trigonometrie\Sinus.cs" />
+    <Compile Include="TermSpace\Fonctions\Numerique\Trigonometrie\Tangente.cs" />
+    <Compile Include="TermSpace\Fonctions\Numerique\Trigonometrie\ToDegree.cs" />
+    <Compile Include="TermSpace\Fonctions\Numerique\Trigonometrie\ToRadiant.cs" />
+    <Compile Include="TermSpace\Fonctions\Numerique\UnaryMinus.cs" />
+    <Compile Include="TermSpace\Fonctions\Numerique\UnaryPlus.cs" />
+    <Compile Include="TermSpace\Fonctions\TextSpace\Concatenation.cs" />
+    <Compile Include="TermSpace\Fonctions\TextSpace\Longueur.cs" />
+    <Compile Include="TermSpace\Operateur\Div.cs" />
+    <Compile Include="TermSpace\Operateur\Minus.cs" />
+    <Compile Include="TermSpace\Operateur\Modulo.cs" />
+    <Compile Include="TermSpace\Fonctions\Numerique\Moyenne.cs" />
+    <Compile Include="TermSpace\Operateur\Mult.cs" />
+    <Compile Include="TermSpace\TypeValeurs\Numeric.cs" />
+    <Compile Include="TermSpace\Operation.cs" />
+    <Compile Include="ParserSpace\Parser.cs" />
+    <Compile Include="TermSpace\Operateur\Plus.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TermSpace\Fonctions\Numerique\Puissance.cs" />
+    <Compile Include="TermSpace\Fonctions\Numerique\Racine.cs" />
+    <Compile Include="TermSpace\TypeValeurs\References.cs" />
+    <Compile Include="ParserSpace\TableurBaseListener.cs" />
+    <Compile Include="ParserSpace\TableurLexer.cs" />
+    <Compile Include="ParserSpace\TableurListener.cs" />
+    <Compile Include="ParserSpace\TableurParser.cs" />
+    <Compile Include="TermSpace\Fonctions\TextSpace\Substring.cs" />
+    <Compile Include="TermSpace\Term.cs" />
+    <Compile Include="TermSpace\TypeValeurs\Texte.cs" />
+    <Compile Include="TermSpace\Fonctions\Numerique\ToNum.cs" />
+    <Compile Include="TermSpace\Fonctions\TextSpace\ToStr.cs" />
+    <Compile Include="TermSpace\Values.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

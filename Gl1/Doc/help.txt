@@ -1,0 +1,32 @@
+####################################################################
+#################################AOSK###############################
+####################################################################
+
+Les cellules de notre tableur sont identifiés par idL@idC avec
+idL qui représente le numéro de ligne et idC le numéro de colonne.
+	Exemple: 1@2, 2@6 etc ...
+
+Les commandes dont vous disposez sont les suivantes :
+	Lecture du contenu d'une cellule : 
+		read idL@idC;
+		Exemple : read 1@2;
+		
+	Affectation d'une valeur à une cellule : 
+		idL@idC <- (Expression)
+		Exemple : 1@2<-3+5; 1@1<-"cela marche";
+	
+	Expression: La liste des fonctions est dans la documentation
+		Cellule : idL@idC;
+		Valeurs : nombres (1,2 etc..) et texte(caractères non spéciaux entre "")
+		Fonctions : 
+			Texte : 
+				concat(Exp, Exp); | length(Exp);
+			Numerique:
+				abs(Exp); | round(Exp); | pow(Exp,Exp); | sqrt(Exp) | confert documentation...
+			Operateur : 
+				+ | - | % | / | *
+			commande :
+				Save path;
+				Export path;
+				Open path;
+				import path;
